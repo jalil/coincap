@@ -8,16 +8,14 @@ class CoinList extends Component {
 
   componentWillMount() {
     axios
-      .get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
-      //.get("file:///Users/jalil/codes/sample.json")
+      .get("file:///Users/jalil/codes/sample.json")
       .then(response => this.setState({ coins: response.data }));
   }
 
   OnButtonPress(name) {
-    console.log(name);
+    console.log(this.props.navigation.state.params);
   }
   render() {
-    console.log(this.state.coins);
     return (
       <ScrollView>
         <List containerStyle={{ marginBottom: 20 }}>

@@ -4,15 +4,13 @@ import { RootNavigator } from './src/routes.js'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducers from './src/reducers'
-import CoinList from './src/components/CoinList'
 
 export default class App extends React.Component {
   render () {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
+        <View style={{ flex: 1 }}>
           <RootNavigator />
-          <CoinList />
         </View>
       </Provider>
     )
